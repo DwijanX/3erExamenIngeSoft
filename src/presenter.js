@@ -1,15 +1,17 @@
-import sumar from "./sumador";
+import {postAMessage,getMessage} from "./messageManager";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
+const Message = document.querySelector("#Message");
+const form = document.querySelector("#publish-form");
+const MessagesList = document.querySelector("#messages-Div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  postAMessage(Message.value);
+  updateMessageList();
 });
+
+function updateMessageList()
+{
+  MessagesList.innerHTML="<p>"+getMessage()+"</p>"
+}
