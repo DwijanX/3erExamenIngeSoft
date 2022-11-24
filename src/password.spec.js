@@ -1,6 +1,9 @@
-import {guessPasswordWord} from "./password"
+import {guessPasswordWord,setPassword} from "./password"
 
 describe("Passwords", () => {
+    beforeEach(() => {
+        setPassword("El password de, mi cuenta es PASSWORD. Es un Password de-poco-cuidado");
+      });
     it("Deberia adivinar password", () => {
         expect(guessPasswordWord("cuidado")).toEqual(1);
       });
@@ -15,5 +18,9 @@ describe("Passwords", () => {
         });
     it("Deberia adivinar password sin importar coma", () => {
         expect(guessPasswordWord("de")).toEqual(2);
+        });
+    it("Deberia poder agregar un password nuevo y adivinar sobre el", () => {
+        setPassword("de-de.de,de de")
+        expect(guessPasswordWord("de")).toEqual(5);
         });
 });

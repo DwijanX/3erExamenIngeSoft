@@ -1,6 +1,11 @@
-let password="El password de, mi cuenta es PASSWORD. Es un Password de-poco-cuidado"
+let password;
 let separators=new Set(["-",",","."])
 
+function setPassword(Password)
+{
+    password=Password
+    return password
+}
 function deleteDotsOnSentence(password)
 {
     let newPass=""
@@ -31,4 +36,4 @@ function guessPasswordWord(guess)
     return timesGuessAppeared
 }
 
-export {guessPasswordWord}
+export {guessPasswordWord,setPassword}
