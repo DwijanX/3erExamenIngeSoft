@@ -1,4 +1,5 @@
 import {postAMessage,getMessages,clearPostedMessages} from "./messageManager";
+const EMPTYMESSAGE="EMPMSG"
 
 describe("Pruebas de mensajes", () => {
   beforeEach(() => {
@@ -12,5 +13,9 @@ describe("Pruebas de mensajes", () => {
     postAMessage("Hola mundo 1")
     postAMessage("Hola mundo 2")
     expect(getMessages()).toEqual(["Hola mundo 1","Hola mundo 2"]);
+  });
+  it("Si se intenta publicar un mensaje vacio devuelve una flag", () => {
+    
+    expect(postAMessage("")).toEqual(EMPTYMESSAGE);
   });
 });

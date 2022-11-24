@@ -1,6 +1,11 @@
+const EMPTYMESSAGE="EMPMSG"
 let postedMessages=[];
 function postAMessage(message) {
-  postedMessages.push(message);
+  if(message.trim()!="")
+  {
+    postedMessages.push(message);
+  }
+  return EMPTYMESSAGE
 }
 function getMessages()
 {
