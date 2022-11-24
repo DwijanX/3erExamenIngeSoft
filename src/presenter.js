@@ -1,4 +1,4 @@
-import {postAMessage,getMessage} from "./messageManager";
+import {postAMessage,getMessages} from "./messageManager";
 
 const Message = document.querySelector("#Message");
 const form = document.querySelector("#publish-form");
@@ -13,5 +13,11 @@ form.addEventListener("submit", (event) => {
 
 function updateMessageList()
 {
-  MessagesList.innerHTML="<p>"+getMessage()+"</p>"
+  MessagesList.innerHTML=""
+  let messages=getMessages()
+  for(let index=0;index<messages.length;index++)
+  {
+    MessagesList.innerHTML+="<p>"+messages[index]+"</p>"
+
+  }
 }
