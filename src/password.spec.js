@@ -10,4 +10,10 @@ describe("Passwords", () => {
     it("Deberia adivinar password sin importar .", () => {
         expect(guessPasswordWord("paSsWorD")).toEqual(3);
         });
+    it("Deberia adivinar password sin importar guion", () => {
+        expect(guessPasswordWord("poco")).toEqual(1);
+        });
+    it("Deberia adivinar password sin importar coma", () => {
+        expect(guessPasswordWord("de")).toEqual(2);
+        });
 });

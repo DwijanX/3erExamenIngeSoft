@@ -1,11 +1,12 @@
-let password="El password de mi cuenta es PASSWORD. Es un Password de poco cuidado"
+let password="El password de, mi cuenta es PASSWORD. Es un Password de-poco-cuidado"
+let separators=new Set(["-",",","."])
 
 function deleteDotsOnSentence(password)
 {
     let newPass=""
     for(let index=0;index<password.length;index++)
     {
-        if(password[index]==".")
+        if(separators.has(password[index]))
             newPass+=" "
         else
             newPass+=password[index]
