@@ -5,7 +5,10 @@ function postAMessage(message) {
   {
     postedMessages.push(message);
   }
-  return EMPTYMESSAGE
+  else
+  {
+    return EMPTYMESSAGE
+  }
 }
 function getMessages()
 {
