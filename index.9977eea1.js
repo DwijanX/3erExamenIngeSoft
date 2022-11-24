@@ -1,0 +1,2 @@
+let e=[];function n(n){if(""==n.trim())return"EMPMSG";e.push(n)}function t(){return e}const r=document.querySelector("#Message"),u=document.querySelector("#publish-form"),o=document.querySelector("#messages-Div"),i=document.querySelector("#errorDiv");u.addEventListener("submit",(e=>{e.preventDefault(),"EMPMSG"==n(r.value)?i.innerHTML="No se puede ingresar un post sin texto":(!function(){o.innerHTML="";let e=t();for(let n=0;n<e.length;n++)o.innerHTML+="<p>"+e[n]+"</p>"}(),i.innerHTML="")}));
+//# sourceMappingURL=index.9977eea1.js.map
