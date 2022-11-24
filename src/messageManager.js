@@ -1,10 +1,14 @@
-let postedMessage;
+let postedMessages=[];
 function postAMessage(message) {
-  postedMessage=message;
+  postedMessages.push(message);
 }
-function getMessage()
+function getMessages()
 {
-  return postedMessage;
+  return postedMessages;
+}
+function clearPostedMessages()
+{
+  postedMessages=[]
 }
 
-export {postAMessage,getMessage};
+export {postAMessage,getMessages,clearPostedMessages};
